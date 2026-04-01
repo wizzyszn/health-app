@@ -6,6 +6,7 @@ import doctor_routes from "./doctor.route";
 import patient_routes from "./patient.route";
 import AppEntry from "@/shared/pages/app-entry.page";
 import { TooltipProvider } from "@/components/ui/tooltip";
+import ViewConsultationDetails from "@/doctor/pages/view-consultation.page.doctor";
 const GoogleOauth = lazy(() => import("@/auth/google-oauth.auth"));
 const NotFound = lazy(() => import("@/shared/pages/not-found.page"));
 
@@ -29,6 +30,14 @@ const router = createBrowserRouter([
   {
     path: "/patient",
     children: patient_routes,
+  },
+  {
+    path: "/test",
+    element: (
+      <div className=" p-12">
+        <ViewConsultationDetails />
+      </div>
+    ),
   },
 
   {
